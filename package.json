@@ -1,0 +1,29 @@
+{
+  "name": "bem-class-names",
+  "version": "1.0.0",
+  "description": "A simple utility for making class names in accordance with BEM methodology",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mlipilin/bem-class-names.git"
+  },
+  "keywords": [
+    "bem",
+    "classnames"
+  ],
+  "author": "Mikhail Lipilin <lipilin.m@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mlipilin/bem-class-names/issues"
+  },
+  "homepage": "https://github.com/mlipilin/bem-class-names#readme",
+  "devDependencies": {
+    "@types/jest": "^24.0.0",
+    "jest": "^24.0.0",
+    "ts-jest": "^23.10.5",
+    "typescript": "^3.3.1"
+  }
+}
