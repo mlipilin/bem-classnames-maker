@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/mlipilin/bem-class-names.svg?branch=master)](https://travis-ci.org/mlipilin/bem-class-names)
+
 # bem-class-names
 A simple utility for making class names in accordance with BEM methodology
 
