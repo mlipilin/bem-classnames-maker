@@ -10,8 +10,11 @@ describe('src/index.js', () => {
         it('block only', () => {
             expect(bemClassNames('block')()).toBe('block');
         });
+        it('block with one string mod', () => {
+            expect(bemClassNames('block')('', 'mod')).toBe('block mod');
+        });
         it('block with one mod', () => {
-            expect(bemClassNames('block')('', ['mod1'])).toBe('block block--mod1');
+            expect(bemClassNames('block')('', ['mod'])).toBe('block block--mod');
         });
         it('block with mods array', () => {
             expect(bemClassNames('block')('', ['mod1', 'mod2'])).toBe(
@@ -28,9 +31,12 @@ describe('src/index.js', () => {
         it('block__element only', () => {
             expect(bemClassNames('block')('element')).toBe('block__element');
         });
+        it('block__element with one string mod', () => {
+            expect(bemClassNames('block')('element', 'mod')).toBe('block__element mod');
+        });
         it('block__element with one mod', () => {
-            expect(bemClassNames('block')('element', ['mod1'])).toBe(
-                'block__element block__element--mod1',
+            expect(bemClassNames('block')('element', ['mod'])).toBe(
+                'block__element block__element--mod',
             );
         });
         it('block__element with mods array', () => {
@@ -52,6 +58,9 @@ describe('src/index.js', () => {
         });
         it('block__element only', () => {
             expect(blockClass('element')).toBe('block___element');
+        });
+        it('block__element with one string mod', () => {
+            expect(blockClass('element', 'mod')).toBe('block___element mod');
         });
         it('block__element with one mod', () => {
             expect(blockClass('element', ['mod1'])).toBe('block___element block___element_mod1');
