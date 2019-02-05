@@ -22,9 +22,12 @@ describe('src/index.js', () => {
             );
         });
         it('block with mod-value object', () => {
-            expect(bemClassNames('block')('', { mod1: 'value1', mod2: 'value2' })).toBe(
-                'block block--mod1-value1 block--mod2-value2',
-            );
+            expect(
+                bemClassNames('block')('', {
+                    mod1: 'value1',
+                    mod2: 'value2',
+                }),
+            ).toBe('block block--mod1-value1 block--mod2-value2');
         });
     });
     describe('block__element', () => {
@@ -45,9 +48,12 @@ describe('src/index.js', () => {
             );
         });
         it('block__element with mod-value object', () => {
-            expect(bemClassNames('block')('element', { mod1: 'value1', mod2: 'value2' })).toBe(
-                'block__element block__element--mod1-value1 block__element--mod2-value2',
-            );
+            expect(
+                bemClassNames('block')('element', {
+                    mod1: 'value1',
+                    mod2: 'value2',
+                }),
+            ).toBe('block__element block__element--mod1-value1 block__element--mod2-value2');
         });
     });
     describe('block__element (cutsom delimiters settings)', () => {
@@ -71,9 +77,12 @@ describe('src/index.js', () => {
             );
         });
         it('block__element with mod-value object', () => {
-            expect(blockClass('element', { mod1: 'value1', mod2: 'value2' })).toBe(
-                'block___element block___element_mod1-value1 block___element_mod2-value2',
-            );
+            expect(
+                blockClass('element', {
+                    mod1: 'value1',
+                    mod2: 'value2',
+                }),
+            ).toBe('block___element block___element_mod1-value1 block___element_mod2-value2');
         });
     });
 });

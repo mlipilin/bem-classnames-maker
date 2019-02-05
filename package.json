@@ -26,7 +26,14 @@
     "@babel/core": "^7.2.2",
     "@babel/preset-env": "^7.3.1",
     "babel-jest": "^24.0.0",
+    "husky": "^1.3.1",
     "jest": "^24.0.0",
     "prettier": "1.16.4"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm t",
+      "pre-push": "prettier --write 'src/*.js'"
+    }
   }
 }
