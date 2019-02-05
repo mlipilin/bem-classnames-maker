@@ -14,11 +14,11 @@ describe('src/index.js', () => {
             expect(bemClassNames('block')('', 'mod')).toBe('block mod');
         });
         it('block with one mod', () => {
-            expect(bemClassNames('block')('', ['mod'])).toBe('block block--mod');
+            expect(bemClassNames('block')('', ['mod'])).toBe('block block_mod');
         });
         it('block with mods array', () => {
             expect(bemClassNames('block')('', ['mod1', 'mod2'])).toBe(
-                'block block--mod1 block--mod2',
+                'block block_mod1 block_mod2',
             );
         });
         it('block with mod-value object', () => {
@@ -27,7 +27,7 @@ describe('src/index.js', () => {
                     mod1: 'value1',
                     mod2: 'value2',
                 }),
-            ).toBe('block block--mod1-value1 block--mod2-value2');
+            ).toBe('block block_mod1_value1 block_mod2_value2');
         });
     });
     describe('block__element', () => {
@@ -39,12 +39,12 @@ describe('src/index.js', () => {
         });
         it('block__element with one mod', () => {
             expect(bemClassNames('block')('element', ['mod'])).toBe(
-                'block__element block__element--mod',
+                'block__element block__element_mod',
             );
         });
         it('block__element with mods array', () => {
             expect(bemClassNames('block')('element', ['mod1', 'mod2'])).toBe(
-                'block__element block__element--mod1 block__element--mod2',
+                'block__element block__element_mod1 block__element_mod2',
             );
         });
         it('block__element with mod-value object', () => {
@@ -53,7 +53,7 @@ describe('src/index.js', () => {
                     mod1: 'value1',
                     mod2: 'value2',
                 }),
-            ).toBe('block__element block__element--mod1-value1 block__element--mod2-value2');
+            ).toBe('block__element block__element_mod1_value1 block__element_mod2_value2');
         });
     });
     describe('block__element (cutsom delimiters settings)', () => {
