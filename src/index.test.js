@@ -1,22 +1,70 @@
 import bemClassNames from './index';
 
 describe('src/index.js', () => {
-    describe('bemClassNames', () => {
-        it('bemClassNames()() => ""', () => {
+    describe('no params', () => {
+        it('no block, no element and no mods', () => {
             expect(bemClassNames()()).toBe('');
         });
-        it('bemClassNames("myblock")() => "myblock"', () => {
-            expect(bemClassNames('myblock')()).toBe('myblock');
+    });
+    describe('block', () => {
+        it('block only', () => {
+            expect(bemClassNames('block')()).toBe('block');
         });
-        it('bemClassNames("myblock")("", ["mod1"]) => "myblock myblock--mod1"', () => {
-            expect(bemClassNames('myblock')('', ['mod1'])).toBe('myblock myblock--mod1');
+        it('block with one mod', () => {
+            expect(bemClassNames('block')('', ['mod1'])).toBe('block block--mod1');
+        });
+        it('block with mods array', () => {
+            expect(bemClassNames('block')('', ['mod1', 'mod2'])).toBe(
+                'block block--mod1 block--mod2',
+            );
+        });
+        it('block with mod-value object', () => {
+            expect(bemClassNames('block')('', { mod1: 'value1', mod2: 'value2' })).toBe(
+                'block block--mod1-value1 block--mod2-value2',
+            );
+        });
+    });
+    describe('block__element', () => {
+        it('block__element only', () => {
+            expect(bemClassNames('block')('element')).toBe('block__element');
+        });
+        it('block__element with one mod', () => {
+            expect(bemClassNames('block')('element', ['mod1'])).toBe(
+                'block__element block__element--mod1',
+            );
+        });
+        it('block__element with mods array', () => {
+            expect(bemClassNames('block')('element', ['mod1', 'mod2'])).toBe(
+                'block__element block__element--mod1 block__element--mod2',
+            );
+        });
+        it('block__element with mod-value object', () => {
+            expect(bemClassNames('block')('element', { mod1: 'value1', mod2: 'value2' })).toBe(
+                'block__element block__element--mod1-value1 block__element--mod2-value2',
+            );
+        });
+    });
+    describe('block__element (cutsom delimiters settings)', () => {
+        const blockClass = bemClassNames('block', {
+            BLOCK_ELEMENT_DELIMITER: '___',
+            MOD_DELIMITER: '_',
+            MOD_VALUE_DELIMITER: '-',
+        });
+        it('block__element only', () => {
+            expect(blockClass('element')).toBe('block___element');
+        });
+        it('block__element with one mod', () => {
+            expect(blockClass('element', ['mod1'])).toBe('block___element block___element_mod1');
+        });
+        it('block__element with mods array', () => {
+            expect(blockClass('element', ['mod1', 'mod2'])).toBe(
+                'block___element block___element_mod1 block___element_mod2',
+            );
+        });
+        it('block__element with mod-value object', () => {
+            expect(blockClass('element', { mod1: 'value1', mod2: 'value2' })).toBe(
+                'block___element block___element_mod1-value1 block___element_mod2-value2',
+            );
         });
     });
 });
-
-// blockClass();														// block
-// blockClass('element');												// block__element
-// blockClass('element', ['mod']);										// block__element_mod
-// blockClass('element', ['mod1', 'mod2']);								// block__element_mod1 block__element_mod2
-// blockClass('element', [{ 'mod': 'value' }]);							// block__element_mod_value
-// blockClass('element', [{ 'mod1': 'value1' }, { 'mod2': 'value2' }]);	// block__element_mod1_value1 block__element_mod2_value2
