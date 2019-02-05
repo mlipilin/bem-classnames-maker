@@ -32,8 +32,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm t",
-      "pre-push": "prettier --write 'src/*.js'"
+      "pre-commit": "prettier --write 'src/*.js' && npm t"
     }
   }
 }
