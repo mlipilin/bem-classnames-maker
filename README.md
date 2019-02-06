@@ -1,14 +1,14 @@
-[![Build Status](https://travis-ci.org/mlipilin/bem-class-names.svg?branch=master)](https://travis-ci.org/mlipilin/bem-class-names)
+[![Build Status](https://travis-ci.org/mlipilin/bem-classnames-maker.svg?branch=master)](https://travis-ci.org/mlipilin/bem-classnames-maker)
 
-# bem-class-names
+# bem-classnames-maker
 A simple utility for making class names in accordance with BEM methodology
 
 ## Installation
-```npm install bem-class-names``` or ```yarn add bem-class-names```
+```npm install bem-classnames-maker``` or ```yarn add bem-classnames-maker```
 
 ## How to use
 ```javascript
-import bem from 'bem-class-names';
+import bem from 'bem-classnames-maker';
 
 // Create a BEM instance with passed block name
 const cx = bem('block');
@@ -50,7 +50,7 @@ const cx = bem('block', {
 ### React Component
 ```javascript
 import React from 'react';
-import bem from 'bem-class-names';
+import bem from 'bem-classnames-maker';
 
 const cx = bem('user');
 
