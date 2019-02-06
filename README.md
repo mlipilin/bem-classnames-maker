@@ -33,13 +33,13 @@ There is also an ability to chande default delimiters:
 ```javascript
 const cx = bem('block', {
 
-  // delimiter between block and element (default "__")
+  // delimiter between block and element (by default "__")
   BLOCK_ELEMENT_DELIMITER: '___',
 
-  // delimiter between element and modifier (default "_")
+  // delimiter between element and modifier (by default "_")
   MOD_DELIMITER: '_',
 
-  // delimiter between modifier name and modifier value (default "_")
+  // delimiter between modifier name and modifier value (by default "_")
   MOD_VALUE_DELIMITER: '-',
 
 });
