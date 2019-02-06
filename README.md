@@ -1,4 +1,5 @@
 [![Build Status](https://travis-ci.org/mlipilin/bem-classnames-maker.svg?branch=master)](https://travis-ci.org/mlipilin/bem-classnames-maker)
+[![npm version](https://badge.fury.io/js/bem-classnames-maker.svg)](https://badge.fury.io/js/bem-classnames-maker)
 
 # bem-classnames-maker
 A simple utility for making class names in accordance with BEM methodology
