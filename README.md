@@ -64,5 +64,5 @@ const MyComponent = props => (
       John Doe
     </div>
   </div>
-)
+);
 ```
