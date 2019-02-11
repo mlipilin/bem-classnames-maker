@@ -4,6 +4,9 @@ import DEFAULT_SETTINGS from './settings';
 const makeMod = (el, modDelimiter, modValueDelimiter) => (mods = ['', '']) => {
     if (Array.isArray(mods)) {
         const [mod, value] = mods;
+        if (typeof value === 'boolean') {
+            return value ? `${el}${modDelimiter}${mod}` : '';
+        }
         return `${el}${modDelimiter}${mod}${modValueDelimiter}${String(value)}`;
     }
 
@@ -25,7 +28,7 @@ const makeClassName = (block, settings = DEFAULT_SETTINGS) => (el, mods = []) =>
         clsMods = Object.entries(mods).map(makeMod(cls, MOD_DELIMITER, MOD_VALUE_DELIMITER));
     }
 
-    return [cls, ...clsMods].join(' ');
+    return [cls, ...clsMods].filter(c => !!c).join(' ');
 };
 
 export default makeClassName;

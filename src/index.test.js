@@ -24,8 +24,10 @@ describe('src/index.js', () => {
                 bem('block')('', {
                     mod1: 'value1',
                     mod2: 'value2',
+                    mod3: false,
+                    mod4: true,
                 }),
-            ).toBe('block block_mod1_value1 block_mod2_value2');
+            ).toBe('block block_mod1_value1 block_mod2_value2 block_mod4');
         });
     });
     describe('block__element', () => {
@@ -43,16 +45,20 @@ describe('src/index.js', () => {
                 'block__element block__element_mod1 block__element_mod2',
             );
         });
-        it('block__element with mod-value object', () => {
+        it('block with mod-value object', () => {
             expect(
                 bem('block')('element', {
                     mod1: 'value1',
                     mod2: 'value2',
+                    mod3: false,
+                    mod4: true,
                 }),
-            ).toBe('block__element block__element_mod1_value1 block__element_mod2_value2');
+            ).toBe(
+                'block__element block__element_mod1_value1 block__element_mod2_value2 block__element_mod4',
+            );
         });
     });
-    describe('block__element (cutsom delimiters settings)', () => {
+    describe('block__element (custom delimiters settings)', () => {
         const blockClass = bem('block', {
             BLOCK_ELEMENT_DELIMITER: '___',
             MOD_DELIMITER: '_',
@@ -77,8 +83,12 @@ describe('src/index.js', () => {
                 blockClass('element', {
                     mod1: 'value1',
                     mod2: 'value2',
+                    mod3: false,
+                    mod4: true,
                 }),
-            ).toBe('block___element block___element_mod1-value1 block___element_mod2-value2');
+            ).toBe(
+                'block___element block___element_mod1-value1 block___element_mod2-value2 block___element_mod4',
+            );
         });
     });
 });

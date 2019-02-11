@@ -14,14 +14,15 @@ import bem from 'bem-classnames-maker';
 // Create a BEM instance with passed block name
 const cx = bem('block');
 
-cx();                                           // "block"
-cx('', ['mod']);                                // "block_mod"
-cx('', ['mod1', 'mod2']);                       // "block_mod1 block_mod2"
-cx('', { mod1: 'val1', mod2: 'val2' });         // "block_mod1_value1 block_mod2_value2"
-cx('element');                                  // "block__element"
-cx('element', ['mod']);                         // "block__element_mod"
-cx('element', ['mod1', 'mod2']);                // "block__element_mod1 block__element_mod2"
-cx('element', { mod1: 'val1', mod2: 'val2' });  // "block__element_mod1_val1 block__element_mod2_val2"
+cx();                                                     // "block"
+cx('', ['mod']);                                          // "block_mod"
+cx('', ['mod1', 'mod2']);                                 // "block_mod1 block_mod2"
+cx('', { mod1: 'val1', mod2: 'val2' });                   // "block_mod1_value1 block_mod2_value2"
+cx('element');                                            // "block__element"
+cx('element', ['mod']);                                   // "block__element_mod"
+cx('element', ['mod1', 'mod2']);                          // "block__element_mod1 block__element_mod2"
+cx('element', { mod1: 'val1', mod2: 'val2' });            // "block__element_mod1_val1 block__element_mod2_val2"
+cx('element', { mod1: 'val1', mod2: false, mod3: true }); // "block__element_mod1_val1 block__element_mod3"
 ```
 
 If you need to add a small modifier (without block and element prefix) you can do that by passing the modifier as a string (but BEM methodology doesn't encourage such naming):
