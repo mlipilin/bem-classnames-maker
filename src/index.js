@@ -1,5 +1,5 @@
 // Constants
-import DEFAULT_SETTINGS from './settings';
+import DEFAULT_SETTINGS from './settings.json';
 
 const makeMod = (el, modDelimiter, modValueDelimiter) => (mods = ['', '']) => {
     if (Array.isArray(mods)) {
