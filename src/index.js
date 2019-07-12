@@ -1,3 +1,4 @@
+// Constants
 import DEFAULT_SETTINGS from './settings.json';
 
 const makeMod = (el, modDelimiter, modValueDelimiter) => (mods = ['', '']) => {
