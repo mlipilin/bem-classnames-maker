@@ -35,7 +35,7 @@
     "prettier": "1.16.4",
     "rollup": "^1.16.7",
     "rollup-plugin-json": "^3.1.0",
-    "semantic-release": "^15.13.18"
+    "semantic-release": "^17.2.3"
   },
   "husky": {
     "hooks": {
